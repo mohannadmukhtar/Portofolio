@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #512bd4;
+    --secondary: #818cf8;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #0f172a;
+    color: #f8fafc;
+    overflow-x: hidden;
+}
+
+/* Custom Cursor */
+#cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 1000;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}
+
+#cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--secondary);
+    position: fixed;
+    border-radius: 50%;
+    z-index: 999;
+    pointer-events: none;
+    transition: transform 0.15s ease-out, opacity 0.3s ease;
+}
+
+.glass-card {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.dot-net-gradient {
+    background: linear-gradient(135deg, #512bd4 0%, #2d1a8e 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skill-badge {
+    background: rgba(81, 43, 212, 0.1);
+    border: 1px solid rgba(81, 43, 212, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Reveal on Scroll Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section {
+    padding: 100px 20px;
+}
+
+.hero-bg {
+background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), 
+              url('https://i.ibb.co/4wKZW7PK/Whats-App-Image-2026-02-04-at-4-26-51-AM.jpg');
+background-attachment: fixed;
+/* نستخدم cover لتملأ الصورة الشاشة بالكامل */
+background-size: cover; 
+/* نغير center إلى نسبة مئوية للتحكم في مكان الوجه (مثلاً 20% من الأعلى) */
+background-position: center 20%; 
+background-repeat: no-repeat;
+}
+
+/* تعديل خاص للشاشات الكبيرة (PC Mode) للتأكد من ظهور الوجه */
+@media (min-width: 1024px) {
+.hero-bg {
+    /* يمكنك تعديل الـ 25% (إلى أعلى أو أسفل) حتى يظهر وجهك في المكان المثالي */
+    background-position: center 25%; 
+}
+}
+
+.project-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px 12px 0 0;
+}
